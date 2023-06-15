@@ -2,16 +2,12 @@ import 'package:flutter/material.dart';
 
 import './quiz.dart';
 import './result.dart';
-// void main() {
-//   runApp(MyApp());
-// }
 
 void main() => runApp(MyApp());
 
 class MyApp extends StatefulWidget {
   @override
   State<StatefulWidget> createState() {
-    // TODO: implement createState
     return _MyAppState();
   }
 }
@@ -19,30 +15,56 @@ class MyApp extends StatefulWidget {
 class _MyAppState extends State<MyApp> {
   final _questions = const [
     {
-      'questionText': 'What\'s your favorite color?',
+      'questionText': 'What\'s the correct syntax to declare a variable in C++?',
       'answers': [
-        {'text': 'Black', 'score': 10},
-        {'text': 'Red', 'score': 5},
-        {'text': 'Green', 'score': 3},
-        {'text': 'White', 'score': 1},
+        {'text': 'var x;', 'score': 0},
+        {'text': 'int x;', 'score': 4},
+        {'text': 'x = int;', 'score': 0},
+        {'text': 'declare x;', 'score': 0},
       ],
     },
     {
-      'questionText': 'What\'s your favorite animal?',
+      'questionText': 'What\'s the output of?\n int x = 10;\n int y = x++;\n cout<<y;',
       'answers': [
-        {'text': 'Rabbit', 'score': 3},
-        {'text': 'Snake', 'score': 11},
-        {'text': 'Elephant', 'score': 5},
-        {'text': 'Lion', 'score': 9},
+        {'text': '10', 'score': 0},
+        {'text': '11', 'score': 4},
+        {'text': '9', 'score': 0},
+        {'text': 'error', 'score': 0},
       ],
     },
     {
-      'questionText': 'Who\'s your favorite instructor?',
+      'questionText': 'Data Structure following Last-In-First-Out principle?',
       'answers': [
-        {'text': 'Max', 'score': 1},
-        {'text': 'Max', 'score': 1},
-        {'text': 'Max', 'score': 1},
-        {'text': 'Max', 'score': 1},
+        {'text': 'Queue', 'score': 0},
+        {'text': 'Linked List', 'score': 0},
+        {'text': 'Stack', 'score': 4},
+        {'text': 'Tree', 'score': 0},
+      ],
+    },
+    {
+      'questionText': 'Worst case O(n^2) sorting algo?',
+      'answers': [
+        {'text': 'Insertion Sort', 'score': 0},
+        {'text': 'Qucik Sort', 'score': 0},
+        {'text': 'Bubble Sort', 'score': 4},
+        {'text': 'Merge Sort', 'score': 0},
+      ],
+    },
+    {
+      'questionText': 'What is encapsulation in OOP??',
+      'answers': [
+        {'text': 'Binding data and functions into a single unit', 'score': 4},
+        {'text': 'Hiding data within a class', 'score': 0},
+        {'text': 'Inheriting properties from a base class', 'score': 0},
+        {'text': 'Making use of objects in programming', 'score': 0},
+      ],
+    },{
+      'questionText': 'What is inheritance in OOP??',
+      'answers': [
+        {'text': 'Creating multiple instances of a class', 'score': 0},
+        {'text': 'Hiding data within a class', 'score': 0},
+        {'text': 'Binding data and functions into a single unit', 'score': 0},
+        {'text': 'Acquiring properties and behaviors of a base class', 'score': 4},
       ],
     },
   ];
@@ -57,8 +79,6 @@ class _MyAppState extends State<MyApp> {
   }
 
   void _answerQuestion(int score) {
-    // var aBool = true;
-    // aBool = false;
 
     _totalScore += score;
 
@@ -75,11 +95,6 @@ class _MyAppState extends State<MyApp> {
 
   @override
   Widget build(BuildContext context) {
-    // var dummy = const ['Hello'];
-    // dummy.add('Max');
-    // print(dummy);
-    // dummy = [];
-    // questions = []; // does not work if questions is a const
 
     return MaterialApp(
       home: Scaffold(
